@@ -34,8 +34,9 @@ class OrderedLinkedList:
                 if node < itera._next:
                     node._next = itera._next
                     itera._next = node
-                    break
+                    return self
                 itera = itera._next
+            itera._next = node
     return self
   def __str__(self):           
     s = str(self._head)
@@ -45,4 +46,4 @@ class OrderedLinkedList:
         itera = itera._next
     return s
 
-print (OrderedLinkedList().insert(Result(3)).insert(Result(1)).insert(Result(0)).insert(Result(2)))
+print (OrderedLinkedList().insert(Result(3)).insert(Result(1)).insert(Result(0)).insert(Result(2)).insert(Result(10)))
